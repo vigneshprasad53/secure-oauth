@@ -21,6 +21,7 @@ import App from 'containers/App';
 
 
 import configureStore from './configureStore';
+import { GoogleAuthProvider } from './utils/googleOAuth'
 
 
 // Create redux store with history
@@ -32,7 +33,9 @@ const render = () => {
   ReactDOM.render(
     <Provider store={store}>
       <ConnectedRouter history={history}>
-        <App />
+        <GoogleAuthProvider>
+          <App />
+        </GoogleAuthProvider>
       </ConnectedRouter>
     </Provider>,
     MOUNT_NODE,
