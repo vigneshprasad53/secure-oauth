@@ -18,7 +18,7 @@ const ExtendSession = () => {
     const [extendSession, setExtendSession] = useState(false)
 
     useEffect(() => {
-        setAppSesionTime(20);
+        setAppSesionTime(60);
         let lookForSessionTimeout = 0;
         lookForSessionTimeout = setInterval(() => {
             let sessionExpired = isSessionExpired()
@@ -38,7 +38,7 @@ const ExtendSession = () => {
             setSessionExpired(false);
             setExtendSession(false);
             hideModal();
-            setAppSesionTime(5);
+            setAppSesionTime(60);
         }
 
     }, [sessionExpired, extendSession])

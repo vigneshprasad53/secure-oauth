@@ -22,7 +22,6 @@ export function calculateTime(seconds) {
 
 export function setAppSesionTime(seconds) {
     let d = new Date()
-    //console.log("date", d.getHours(), d.getMinutes(), d.getSeconds(), d.getTime())
     let currentTime = d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
     sessionStorage.setItem("logIn", currentTime)
     let calculateLogoutTime = calculateTime(seconds)
